@@ -55,10 +55,6 @@ def check_warning(warning, guesses_left):
 # 2------------------------|
 
 
-def match_with_gaps(my_word, other_word):
-    my_word = [elem for elem in my_word if not elem.isaspace()]
-    return len(other_word) == len(my_word) and all((my_word.count(char) == other_word.count(char)) for char in my_word if char != '_') and all(my_word[i] == other_word[i] or my_word[i] == "_" for i in range(len(my_word)))
-
 def show_possible_matches(my_word):
     match=[]
     for guest in wordlist:
