@@ -1,23 +1,26 @@
+import random
 from tkinter import *
 
-root = Tk()
-root.title('Hangman')
-canvas = Canvas(root, width=600, height=600)
-canvas.pack()
+import random
+import string
 
-def b():
-    y = 0
-    while y<600:
-        x=0
-        while x<600:
-            canvas.create_rectangle(x,y, x+20, y+20, fill='white', outline='black')
-            x=x+20
-        y=y+20
-# b()
+WORDLIST_FILENAME = "words.txt"
 
-entrance = '''Try playing hangman. You have 6 guessing attempts'''
+def load_words():
+    print("Loading word list from file...")
+    # inFile: file
+    inFile = open(WORDLIST_FILENAME, 'r')
+    # line: string
+    line = inFile.readline()
+    # wordlist: list of strings
+    wordlist = line.split()
+    print("  ", len(wordlist), "words loaded.") # IT'S OVER 9000!
+    return wordlist
 
-canvas.create_text(290, 98, text=entrance,fill='red', font=('Helvetica', '14'))
-b1=Button(root, text='Play', width=10, height=2)
-b1.place(x=258, y=300)
-root.mainloop()
+def choose_word(wordlist):
+    return random.choice(wordlist)
+
+wordlist = load_words()
+
+
+
