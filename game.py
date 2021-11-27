@@ -56,15 +56,15 @@ def check_warning(warning, guesses_left):
 
 
 def show_possible_matches(my_word):
-    match=[]
+    poss_m = []
     for guest in wordlist:
-        if match_with_gaps(my_word, guest)==True:
-            match.append(guest)
-    if len(match)==0:
-        return("No matches found")
+        if match_with_gaps(my_word, guest) == True:
+            poss_m.append(guest)
+    if len(poss_m) == 0:
+        return("Matches can not be found")
     else:
-        mathcy=" ".join(match)
-        return mathcy
+        poss_m1 = " ".join(poss_m)
+        return poss_m1
 
 
 def match_with_gaps(my_word, other_word):
@@ -74,16 +74,6 @@ def match_with_gaps(my_word, other_word):
       my_word[i] == other_word[i] or my_word[i] == "_" for i in range(len(my_word)))
 
 
-def show_possible_matches(my_word):
-    match=[]
-    for guest in wordlist:
-        if match_with_gaps(my_word, guest)==True:
-            match.append(guest)
-    if len(match)==0:
-        return("No matches found")
-    else:
-        mathcy=" ".join(match)
-        return mathcy
 
 # 1(1)--------------------------------
 
