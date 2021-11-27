@@ -203,7 +203,7 @@ def hard_hangman(secret_word):
 
 if __name__ == "__main__":
     print('you can play a different variation of the game. choose from: ')
-    print('1. normal mode difficulty hangman (with hints)')
+    print('1. normal mode hangman (with hints)')
     print('2. hard mode hangman (without hints)')
     secret_word=choose_word(wordlist)
     answer = int(input())
